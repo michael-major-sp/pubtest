@@ -1,0 +1,13 @@
+name: Run Checkmarx SAST Script
+
+on:
+  schedule:
+    - cron: '34 15 * * 5'
+    
+jobs:
+  run_script:
+    runs-on: self-hosted
+    steps:
+    # Run local script
+    - name: Run Checkmarx SAST Script
+      run: python3 C:\dev\repos\Cybersecurity\OSS-Checkmarx-Scans\oss-checkmarx-scan.py
