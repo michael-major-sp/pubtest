@@ -1,8 +1,7 @@
 name: Run Checkmarx SAST Script
 
 on:
-  schedule:
-    - cron: '34 15 * * 5'
+  workflow_dispatch
     
 jobs:
   run_script:
