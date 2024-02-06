@@ -9,23 +9,12 @@ jobs:
 
     permissions:
       contents: read # for actions/checkout to fetch code
-      #issues: write # for checkmarx-ts/checkmarx-cxflow-github-action to write feedback to github issues
-      #pull-requests: write # for checkmarx-ts/checkmarx-cxflow-github-action to write feedback to PR
       security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-      #actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
       
     steps:
-    #- uses: actions/checkout@v3
-
-    # Zip repo
-    #- name: Zip Repo
-    #  run: |
-    #    $file=Get-ChildItem -Path . -Exclude ".git/*"
-    #    Compress-Archive -Path $file -DestinationPath checkmarx-upload.zip
+    - uses: actions/checkout@v3
     
     # Run local script
-    #- name: Run Checkmarx SAST Script
-    #  run: python3 C:\dev\repos\Cybersecurity\OSS-Checkmarx-Scans\oss-checkmarx-scan.py ${{github.repository}}
     - name: Run Checkmarx SAST Script
       run: python3 C:\dev\repos\Cybersecurity\OSS-Checkmarx-Scans\scan-with-cxflow.py ${{github.repository}}
     
