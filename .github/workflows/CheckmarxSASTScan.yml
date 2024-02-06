@@ -16,7 +16,7 @@ jobs:
     
     # Run local script
     - name: Run Checkmarx SAST Script
-      run: python3 C:\dev\repos\Cybersecurity\OSS-Checkmarx-Scans\scan-with-cxflow.py ${{github.repository}}
+      run: python3 scan-with-cxflow.py ${{github.repository}}
     
     # Upload the Report for CodeQL/Security Alerts
     - name: Upload SARIF file
