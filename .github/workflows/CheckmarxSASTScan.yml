@@ -7,13 +7,13 @@ jobs:
   run_script:
     runs-on: self-hosted
     steps:
-    - uses: actions/checkout@v3
+    #- uses: actions/checkout@v3
 
     # Zip repo
-    - name: Zip Repo
-      run: |
-        $file=Get-ChildItem -Path . -Exclude ".git/*"
-        Compress-Archive -Path $file -DestinationPath checkmarx-upload.zip
+    #- name: Zip Repo
+    #  run: |
+    #    $file=Get-ChildItem -Path . -Exclude ".git/*"
+    #    Compress-Archive -Path $file -DestinationPath checkmarx-upload.zip
     
     # Run local script
     #- name: Run Checkmarx SAST Script
