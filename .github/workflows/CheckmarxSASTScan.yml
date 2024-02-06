@@ -8,6 +8,10 @@ jobs:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v3
+
+    # Zip repo
+    - name: Zip Repo
+      run: zip -r ${{github.repository}}.zip ${{github.repository}} -x ".git/*" ".github/*"
     
     # Run local script
     - name: Run Checkmarx SAST Script
