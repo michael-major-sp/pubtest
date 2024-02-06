@@ -12,7 +12,7 @@ jobs:
     # Zip repo
     - name: Zip Repo
       run: |
-        $file=Get-ChildItem -Path ${{github.repository}} -Exclude ".git/*"
+        $file=Get-ChildItem -Path . -Exclude ".git/*"
         Compress-Archive -Path $file -DestinationPath ${{github.repository}}.zip
     
     # Run local script
