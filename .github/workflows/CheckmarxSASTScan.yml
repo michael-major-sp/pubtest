@@ -13,7 +13,7 @@ jobs:
     - name: Zip Repo
       run: |
         $file=Get-ChildItem -Path . -Exclude ".git/*"
-        Compress-Archive -Path $file -DestinationPath ${{github.repository}}.zip
+        Compress-Archive -Path $file -DestinationPath checkmarx-upload.zip
     
     # Run local script
     - name: Run Checkmarx SAST Script
