@@ -9,4 +9,4 @@ jobs:
     steps:
     # Run local script
     - name: Run Checkmarx SAST Script
-      run: python3 C:\dev\repos\Cybersecurity\OSS-Checkmarx-Scans\oss-checkmarx-scan.py
+      run: python3 C:\dev\repos\Cybersecurity\OSS-Checkmarx-Scans\oss-checkmarx-scan.py ${{github.repository}}
