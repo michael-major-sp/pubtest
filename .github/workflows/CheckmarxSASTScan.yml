@@ -16,5 +16,7 @@ jobs:
         Compress-Archive -Path $file -DestinationPath checkmarx-upload.zip
     
     # Run local script
+    #- name: Run Checkmarx SAST Script
+    #  run: python3 C:\dev\repos\Cybersecurity\OSS-Checkmarx-Scans\oss-checkmarx-scan.py ${{github.repository}}
     - name: Run Checkmarx SAST Script
-      run: python3 C:\dev\repos\Cybersecurity\OSS-Checkmarx-Scans\oss-checkmarx-scan.py ${{github.repository}}
+      run: python3 C:\dev\repos\Cybersecurity\OSS-Checkmarx-Scans\scan-with-cxflow.py ${{github.event.repository.name}}
