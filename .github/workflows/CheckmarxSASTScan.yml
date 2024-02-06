@@ -11,7 +11,8 @@ jobs:
 
     # Zip repo
     - name: Zip Repo
-      run: zip -r ${{github.repository}}.zip ${{github.repository}} -x ".git/*" ".github/*"
+      run: $file=Get-ChildItem -Path {{github.repository}} -Exclude ".git/*", ".github/*"
+        Compress-Archive -Path $file -DestinationPath ${{github.repository}}.zip
     
     # Run local script
     - name: Run Checkmarx SAST Script
