@@ -1,5 +1,5 @@
 import os
 
 # Adding comment
-password = os.environ.get("PASSWORD")
+password = "thisismypassword"
 print(password)
